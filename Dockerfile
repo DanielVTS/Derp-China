@@ -10,7 +10,9 @@ RUN curl -fsSL "https://dl.google.com/go/go1.21.3.linux-amd64.tar.gz" -o go.tar.
     && tar -C /usr/local -xzf go.tar.gz \
     && rm go.tar.gz
 ENV PATH="/usr/local/go/bin:$PATH"
-RUN go install tailscale.com/cmd/derper@main
+RUN go install tailscale.com/cmd/derper@latest
+#Debug
+RUN go install tailscale.com/cmd/derpprobe@latest
 
 #Install Tailscale and Tailscaled
 RUN apk add tailscale
