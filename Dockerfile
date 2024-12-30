@@ -6,7 +6,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk add curl iptables
 
 #Install GO and Tailscale DERPER
-RUN curl -fsSL "https://dl.google.com/go/go1.21.3.linux-amd64.tar.gz" -o go.tar.gz \
+RUN curl -fsSL "https://dl.google.com/go/go1.23.4.linux-amd64.tar.gz" -o go.tar.gz \
     && tar -C /usr/local -xzf go.tar.gz \
     && rm go.tar.gz
 ENV PATH="/usr/local/go/bin:$PATH"
